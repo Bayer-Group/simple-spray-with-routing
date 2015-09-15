@@ -1,8 +1,10 @@
 package demo.original
 
 import akka.actor.Actor
+import demo.Stuff
+import demo.Stuff._
 import spray.routing.HttpService
-
+import spray.httpx.SprayJsonSupport._
 import scala.concurrent._
 
 class SampleServiceActor extends Actor with SampleRoute {

@@ -1,6 +1,6 @@
 lazy val root = (project in file(".")).enablePlugins(JavaAppPackaging)
 
-name := "advanced-spray"
+name := "simple-spray-with-routing"
 
 organization := "com.monsanto.demo"
 

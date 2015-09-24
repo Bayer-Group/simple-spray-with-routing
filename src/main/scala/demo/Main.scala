@@ -3,7 +3,7 @@ package demo
 
 import akka.actor.{ActorSystem, Props}
 import akka.io.IO
-import demo.rejections.ServiceActor
+import demo.organizing.ServiceActor
 import spray.can.Http
 
 object Main extends App {

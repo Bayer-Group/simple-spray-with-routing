@@ -18,7 +18,7 @@ trait StuffRoute extends HttpService {
                 get {
                     stuffMap.get(id) match {
                         case Some(stuff) => complete(stuff)
-                        case None => complete(NotFound, s"No stuff with id $id was found!")
+                        case None => complete(NotFound -> s"No stuff with id $id was found!")
                     }
                 }
             } ~

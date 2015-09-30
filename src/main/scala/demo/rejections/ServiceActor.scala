@@ -7,7 +7,7 @@ class ServiceActor extends HttpServiceActor {
     override def actorRefFactory = context
 
     implicit def exceptionHandler = ExceptionHandler {
-        case ex: IllegalArgumentException => complete(BadRequest, ex.getMessage)
+        case ex: IllegalArgumentException => complete(BadRequest -> ex.getMessage)
     }
 
     val stuff = new StuffRoute {

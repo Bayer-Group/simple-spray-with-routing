@@ -15,12 +15,14 @@ trait StuffRoute extends HttpService {
     val routes = {
         respondWithMediaType(MediaTypes.`application/json`) {
             path("stuff" / IntNumber) { (id) =>
-                get {
-                    stuffMap.get(id) match {
-                        case Some(stuff) => complete(stuff)
-                        case None => complete(NotFound -> s"No stuff with id $id was found!")
-                    }
-                }
+              validate(id > 0, "Id must be greater than 0!") {
+                  get {
+                      stuffMap.get(id) match {
+                          case Some(stuff) => complete(stuff)
+                          case None => complete(NotFound -> s"No stuff with id $id was found!")
+                      }
+                  }
+              }
             } ~
               path("stuff") {
                   post {
